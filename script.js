@@ -34,7 +34,7 @@ passwordConfirmation.addEventListener('blur', () =>{
 
 
 
-function checkInputUsername() {
+function checkInputUsername() { 
 
     const usernameValue = username.value;
 
@@ -85,7 +85,12 @@ function checkInputPasswordConfirmation() {
 
     } else if (passwordConfirmationValue.length < 8) {
         errorInput(passwordConfirmation, "A senha deve conter no minimo 8 caracteres!")
-    } else {
+
+    } else if ( passwordConfirmationValue != password.value ) {
+        errorInput(passwordConfirmation, "A senha não e a mesma de cima")
+    }
+    
+    else {
         const formItem = passwordConfirmation.parentElement
         formItem.classList = 'form-content'
     }
